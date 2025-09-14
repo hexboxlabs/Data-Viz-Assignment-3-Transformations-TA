@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Stipend Analysis Dashboard</title>
+    <title>Complete Stipend Analysis</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=calendar_today" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'IBM Plex Sans', sans-serif;
             background-color: #0a0a0a;
             color: white;
             margin: 0;
@@ -29,14 +33,15 @@
             background: #1a1a1a;
             border-radius: 10px;
             padding: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 130px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
         
         .chart-title {
-            font-size: 18px;
+            font-size: 40px;
             margin-bottom: 15px;
             color: #ffffff;
+            font-weight: 100;
         }
         
         .controls {
@@ -247,19 +252,93 @@
           font-family: 'Material Symbols Outlined';
         }
 
+        /* New section styles */
+        .info-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .info-box {
+            background: #2a2a2a;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-box h2 {
+            font-size: 18px;
+            margin: 0 0 5px 0;
+            font-weight: 100;
+        }
+
+        .info-box .subhead {
+            font-size: 24px;
+            color: var(--buying-power-2000);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .info-box .cost-of {
+            font-size: 14px;
+            color: #aaa;
+            margin: 10px 0 0 0;
+        }
+
+        .info-box .very-big-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            margin: 5px 0 15px 0;
+        }
+        
+        .info-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar-container {
+            background: #555;
+            height: 80px; /* Increased height */
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--buying-power-2000);
+            transition: width 0.5s ease-in-out;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #ccc;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="dashboard">
         <div class="header">
-            <h1>IIT Bombay's Stipend Analysis Dashboard</h1>
+            <h1  style="text-align: center;">IIT Bombay's Stipend Analysis</h1>
         </div>
         
        
 
         <!-- Multi-line Analysis Chart -->
         <div class="chart-container">
-            <div class="chart-title">Analyzing <b>stipend trends</b> and <b>change in buying power</b> (inflation rate) from 1990-2024</div>
+            <div class="chart-title">Analyzing <b>stipend trends</b> and <b>change in buying power</b> <br> (inflation rate) from 1990-2024</div>
             <div style="font-size: 12px; margin-bottom: 10px; color: #ccc;">
                 <p>Stipends were adjusted during the years 1999, 2007 and 2015 to match the inflation (buying power) during that year. 
                     <br> The graph tries to see the change in buying power of the stipend from the year it was adjusted. </p>
@@ -297,6 +376,76 @@
                 <i style="color: #ffd93d;">Note: Hover over icons to see exact values.</i>
             </div>
             <div id="dot-plot"></div>
+        </div>
+
+        <!-- New Section: Saved Money -->
+        <div class="chart-container">
+            <div class="chart-title">How much has the institute saved since 2000</div>
+            <div style="font-size: 12px; margin-bottom: 15px; color: #ccc;">
+                <p>This section illustrates the cumulative savings the institute has achieved over the years by not adjusting stipends for inflation, compared to various high-value items and events.</p>
+                
+            <div class="info-container">
+                <div class="info-box">
+                    <h2 style="color: #ffd93d;">1999 - 2000 (1 year)</h2>
+                    <p class="cost-of">Institute saved the cost of</p>
+                    <p class="very-big-text">High end <br> Mahendra Scorpio N</p>
+                    <img src="https://c.ndtvimg.com/2024-10/phm1qec_mahindrascorpioclassicbossedition1_625x300_23_October_24.jpg" alt="Mahendra Scorpio N">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 0.1194%;"></div>
+                    </div>
+                    <h2 class="subhead">₹17 Lakhs</h2>
+                </div>
+                <div class="info-box">
+                    <h2 style="color: #ffd93d;">1999 - 2005 (5 years)</h2>
+                    <p class="cost-of">Institute saved the cost of</p>
+                    <p class="very-big-text">3BHK Flat in Hiranandani</p>
+                    <img src="https://hiranandaniexclusive.com/_next/image?url=https%3A%2F%2Fhiranandanioffers.s3.ap-south-1.amazonaws.com%2F07_04_02_CASTLE_ROCK_Interiors_1920_x_716_2_2dee79bb53.jpg&w=3840&q=75" alt="3BHK Flat in Hiranandani">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 3.239%;"></div>
+                    </div>
+                    <h2 class="subhead">₹4.7 Crores</h2>
+                </div>
+                <div class="info-box">
+                    <h2 style="color: #ffd93d;">1999 - 2010 (10 years)</h2>
+                    <p class="cost-of">Institute saved the cost of</p>
+                    <p class="very-big-text">IIT Bombay's <br> Mood Indigo 2024</p>
+                    <img src="https://static.theprint.in/wp-content/uploads/2024/01/ANI-20240112101625.jpg?compress=true&quality=80&w=800&dpr=2" alt="Mood Indigo 2024">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 7.236%;"></div>
+                    </div>
+                    <h2 class="subhead">₹10.5 Crores</h2>
+                </div>
+                <div class="info-box">
+                    <h2 style="color: #ffd93d;">1999 - 2015 (15 years)</h2>
+                    <p class="cost-of">Institute saved the cost of</p>
+                    <p class="very-big-text">H12 Hostel <br> (4 blocks)</p>
+                    <img src="https://images.shiksha.com/mediadata/images/articles/1694156457phpnqG5l7.jpeg" alt="H12 Hostel (4 blocks)">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 28.075%;"></div>
+                    </div>
+                    <h2 class="subhead">₹41 Crores</h2>
+                </div>
+                <div class="info-box">
+                    <h2 style="color: #ffd93d;">1999 - 2020 (20 years)</h2>
+                    <p class="cost-of">Institute saved the earnings of</p>
+                    <p class="very-big-text">Lollapalooza <br> India 2024</p>
+                    <img src="https://images.indianexpress.com/2023/08/lolla.jpg" alt="Lollapalooza India 2024">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 51.503%;"></div>
+                    </div>
+                    <h2 class="subhead">₹75.3 Crores</h2>
+                </div>
+                <div class="info-box">
+                    <h2 style="color: #ffd93d;">1999 - 2025 (25 years)</h2>
+                    <p class="cost-of">Institute saved the cost of</p>
+                    <p class="very-big-text"> ISRO's <br>PSLV Rocket</p>
+                    <img src="https://i0.wp.com/spacenews.com/wp-content/uploads/2023/07/PSLV.jpg" alt="PSLV Rocket">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <h2 class="subhead">₹146 Crores</h2>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -714,14 +863,14 @@
         function createDotPlot() {
             const margin = { top: 40, right: 30, bottom: 60, left: 70 };
             const width = 1000 - margin.left - margin.right;
-            const height = 500 - margin.top - margin.bottom;
+            const height = 600 - margin.top - margin.bottom;
 
             d3.select("#dot-plot").selectAll("*").remove();
 
             const allDots = [];
             dotPlotData.forEach(d => {
-                // Ensure rounded months are not negative
-                const roundedMonths = Math.max(0, Math.round(d.months));
+                const months = Math.max(0, d.months); // Handle negative values
+                const roundedMonths = Math.round(months); // Keep rounding logic for icon count
                 for (let i = 0; i < roundedMonths; i++) {
                     allDots.push({
                         year: d.year,
