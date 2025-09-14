@@ -269,8 +269,6 @@
             flex-direction: column;
             justify-content: space-between;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            opacity: 0; 
-            animation: fadeIn 0.5s forwards;
         }
 
         .info-box h2 {
@@ -328,61 +326,6 @@
             color: #ccc;
             margin-top: 5px;
         }
-        
-        /* Styles for new buttons */
-        .savings-buttons-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .savings-label {
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            white-space: nowrap;
-        }
-
-        .savings-buttons {
-            display: flex;
-            background: #2a2a2a;
-            border-radius: 10px;
-            padding: 5px;
-            border: 2px solid var(--buying-power-2000);
-        }
-
-        .savings-btn {
-            background: #45b7d1;
-            color: black;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background-color 0.3s ease, border 0.3s ease;
-            cursor: pointer;
-            margin: 0 2px;
-        }
-
-        .savings-btn:first-child { margin-left: 0; }
-        .savings-btn:last-child { margin-right: 0; }
-
-        .savings-btn:hover, .savings-btn.active {
-            background: #3890a4; /* Darker blue */
-            border: 2px solid white;
-        }
-
-        .info-container-dynamic {
-            display: flex;
-            justify-content: center;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 <body>
@@ -437,27 +380,71 @@
 
         <!-- New Section: Saved Money -->
         <div class="chart-container">
-            <div class="chart-title">How much money has the institute saved since 1999? </div>
+            <div class="chart-title">How much has the institute saved since 2000</div>
             <div style="font-size: 12px; margin-bottom: 15px; color: #ccc;">
                 <p>This section illustrates the cumulative savings the institute has achieved over the years by not adjusting stipends for inflation, compared to various high-value items and events.</p>
-                <i style="color: #ffd93d;">Note: Hover over the year to to toggle.</i>
-            </div>
-            
-            
-            <div class="savings-buttons-container">
-                <div class="savings-label">From 1999</div>
-                <div class="savings-buttons">
-                    <button class="savings-btn active" data-period="2000">till 2000</button>
-                    <button class="savings-btn" data-period="2005">till 2005</button>
-                    <button class="savings-btn" data-period="2010">till 2010</button>
-                    <button class="savings-btn" data-period="2015">till 2015</button>
-                    <button class="savings-btn" data-period="2020">till 2020</button>
-                    <button class="savings-btn" data-period="2025">till 2025</button>
+                
+            <div class="info-container">
+                <div class="info-box">
+                    <h2 style="color: #ffd93d;">1999 - 2000 (1 year)</h2>
+                    <p class="cost-of">Institute saved the cost of</p>
+                    <p class="very-big-text">High end <br> Mahendra Scorpio N</p>
+                    <img src="https://c.ndtvimg.com/2024-10/phm1qec_mahindrascorpioclassicbossedition1_625x300_23_October_24.jpg" alt="Mahendra Scorpio N">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 0.1194%;"></div>
+                    </div>
+                    <h2 class="subhead">₹17 Lakhs</h2>
                 </div>
-            </div>
-
-            <div class="info-container-dynamic">
-                <!-- The selected info box will be injected here by JavaScript -->
+                <div class="info-box">
+                    <h2 style="color: #ffd93d;">1999 - 2005 (5 years)</h2>
+                    <p class="cost-of">Institute saved the cost of</p>
+                    <p class="very-big-text">3BHK Flat in Hiranandani</p>
+                    <img src="https://hiranandaniexclusive.com/_next/image?url=https%3A%2F%2Fhiranandanioffers.s3.ap-south-1.amazonaws.com%2F07_04_02_CASTLE_ROCK_Interiors_1920_x_716_2_2dee79bb53.jpg&w=3840&q=75" alt="3BHK Flat in Hiranandani">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 3.239%;"></div>
+                    </div>
+                    <h2 class="subhead">₹4.7 Crores</h2>
+                </div>
+                <div class="info-box">
+                    <h2 style="color: #ffd93d;">1999 - 2010 (10 years)</h2>
+                    <p class="cost-of">Institute saved the cost of</p>
+                    <p class="very-big-text">IIT Bombay's <br> Mood Indigo 2024</p>
+                    <img src="https://static.theprint.in/wp-content/uploads/2024/01/ANI-20240112101625.jpg?compress=true&quality=80&w=800&dpr=2" alt="Mood Indigo 2024">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 7.236%;"></div>
+                    </div>
+                    <h2 class="subhead">₹10.5 Crores</h2>
+                </div>
+                <div class="info-box">
+                    <h2 style="color: #ffd93d;">1999 - 2015 (15 years)</h2>
+                    <p class="cost-of">Institute saved the cost of</p>
+                    <p class="very-big-text">H12 Hostel <br> (4 blocks)</p>
+                    <img src="https://images.shiksha.com/mediadata/images/articles/1694156457phpnqG5l7.jpeg" alt="H12 Hostel (4 blocks)">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 28.075%;"></div>
+                    </div>
+                    <h2 class="subhead">₹41 Crores</h2>
+                </div>
+                <div class="info-box">
+                    <h2 style="color: #ffd93d;">1999 - 2020 (20 years)</h2>
+                    <p class="cost-of">Institute saved the earnings of</p>
+                    <p class="very-big-text">Lollapalooza <br> India 2024</p>
+                    <img src="https://images.indianexpress.com/2023/08/lolla.jpg" alt="Lollapalooza India 2024">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 51.503%;"></div>
+                    </div>
+                    <h2 class="subhead">₹75.3 Crores</h2>
+                </div>
+                <div class="info-box">
+                    <h2 style="color: #ffd93d;">1999 - 2025 (25 years)</h2>
+                    <p class="cost-of">Institute saved the cost of</p>
+                    <p class="very-big-text"> ISRO's <br>PSLV Rocket</p>
+                    <img src="https://i0.wp.com/spacenews.com/wp-content/uploads/2023/07/PSLV.jpg" alt="PSLV Rocket">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <h2 class="subhead">₹146 Crores</h2>
+                </div>
             </div>
         </div>
     </div>
@@ -563,58 +550,6 @@
             { year: "2023", months: 10.19 },
             { year: "2024", months: 11.33 }
         ];
-        
-        // Data for the dynamic cards
-        const savingsData = {
-            '2000': {
-                title: '1999 - 2000 (1 year)',
-                costOf: 'Institute saved the cost of',
-                item: 'High end <br> Mahendra Scorpio N',
-                image: 'https://c.ndtvimg.com/2024-10/phm1qec_mahindrascorpioclassicbossedition1_625x300_23_October_24.jpg',
-                progress: '0.1194%',
-                value: '₹17 Lakhs'
-            },
-            '2005': {
-                title: '1999 - 2005 (5 years)',
-                costOf: 'Institute saved the cost of',
-                item: '3BHK Flat in Hiranandani',
-                image: 'https://hiranandaniexclusive.com/_next/image?url=https%3A%2F%2Fhiranandanioffers.s3.ap-south-1.amazonaws.com%2F07_04_02_CASTLE_ROCK_Interiors_1920_x_716_2_2dee79bb53.jpg&w=3840&q=75',
-                progress: '3.239%',
-                value: '₹4.7 Crores'
-            },
-            '2010': {
-                title: '1999 - 2010 (10 years)',
-                costOf: 'Institute saved the cost of',
-                item: 'IIT Bombay\'s <br> Mood Indigo 2024',
-                image: 'https://static.theprint.in/wp-content/uploads/2024/01/ANI-20240112101625.jpg?compress=true&quality=80&w=800&dpr=2',
-                progress: '7.236%',
-                value: '₹10.5 Crores'
-            },
-            '2015': {
-                title: '1999 - 2015 (15 years)',
-                costOf: 'Institute saved the cost of',
-                item: 'H12 Hostel <br> (4 blocks)',
-                image: 'https://images.shiksha.com/mediadata/images/articles/1694156457phpnqG5l7.jpeg',
-                progress: '28.075%',
-                value: '₹41 Crores'
-            },
-            '2020': {
-                title: '1999 - 2020 (20 years)',
-                costOf: 'Institute saved the earnings of',
-                item: 'Lollapalooza <br> India 2024',
-                image: 'https://images.indianexpress.com/2023/08/lolla.jpg',
-                progress: '51.503%',
-                value: '₹75.3 Crores'
-            },
-            '2025': {
-                title: '1999 - 2025 (25 years)',
-                costOf: 'Institute saved the cost of',
-                item: 'ISRO\'s <br>PSLV Rocket',
-                image: 'https://i0.wp.com/spacenews.com/wp-content/uploads/2023/07/PSLV.jpg',
-                progress: '100%',
-                value: '₹146 Crores'
-            }
-        };
 
         // Color scheme
         const colors = {
@@ -1043,27 +978,6 @@
                 .text(d => d.months <= 0 ? "0" : d.months.toFixed(1));
         }
 
-        // Function to render a card based on the period key
-        function renderSavingsCard(period) {
-            const data = savingsData[period];
-            if (!data) return;
-
-            const container = document.querySelector('.info-container-dynamic');
-            container.innerHTML = `
-                <div class="info-box">
-                    <h2 style="color: #ffd93d;">${data.title}</h2>
-                    <p class="cost-of">${data.costOf}</p>
-                    <p class="very-big-text">${data.item}</p>
-                    <img src="${data.image}" alt="${data.item.replace(/<br>/g, '')}">
-                    <div class="progress-bar-container">
-                        <div class="progress-bar" style="width: ${data.progress};"></div>
-                    </div>
-                    <h2 class="subhead">${data.value}</h2>
-                </div>
-            `;
-        }
-
-
         // Track which lines are currently visible
         let visibleLines = new Set(['stipend', 'buyingPower2000']);
 
@@ -1101,19 +1015,6 @@
             // Special handlers for "All" button
             document.getElementById('btn-all').addEventListener('click', function() {
                 toggleAllLines(this);
-            });
-            
-            const savingsButtons = document.querySelectorAll('.savings-btn');
-            renderSavingsCard('2000'); // Initial render for the default card
-
-            savingsButtons.forEach(button => {
-                button.addEventListener('mouseover', function() {
-                    savingsButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const period = this.getAttribute('data-period');
-                    renderSavingsCard(period);
-                });
             });
         });
 
